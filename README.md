@@ -2,18 +2,18 @@
 
 This application was generated using JHipster 5.8.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.8.0](https://www.jhipster.tech/documentation-archive/v5.8.0).
 
-This application also used two generators :
+This application also used two generators:
 
 -   [Stripe Payment](https://github.com/contribution-jhipster-uga/generator-jhipster-stripe-payment)
 -   [Angular Material Integration](https://github.com/contribution-jhipster-uga/sample-application-angular-material)
 
 ## Overview
 
-You can buy a product shown in the home page :
+You can buy a product shown in the home page:
 
 ![Payment Page](images/HomePage.png)
 
-Using your own credit card in the payment page :
+Using your own credit card in the payment page:
 
 ![Payment Page](images/PaymentPage.png)
 
