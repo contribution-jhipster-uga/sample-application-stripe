@@ -38,6 +38,7 @@ import {
     faSearch,
     faTrashAlt,
     faAsterisk,
+    faCreditCard,
     faTasks,
     faHome
 } from '@fortawesome/free-solid-svg-icons';
@@ -78,4 +79,5 @@ library.add(faSearch);
 library.add(faTrashAlt);
 library.add(faAsterisk);
 
+library.add(faCreditCard);
 // jhipster-needle-add-element-to-vendor - JHipster will add new menu items here

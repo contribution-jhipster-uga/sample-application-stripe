@@ -2,6 +2,18 @@
 
 This application was generated using JHipster 5.8.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v5.8.0](https://www.jhipster.tech/documentation-archive/v5.8.0).
 
+This application also used two generators :
+
+-   [Stripe Payment](https://github.com/contribution-jhipster-uga/generator-jhipster-stripe-payment)
+-   [Angular Material Integration](https://github.com/contribution-jhipster-uga/sample-application-angular-material)
+
+## Prerequisites
+
+If you want to try the Stripe payment, please do not forget to add your private and publish Stripe key (test or live version).
+
+-   You have to put your private key in src/main/java/com/mycompany/myapp/web/rest/PaymentRessource.java line 85 (Stripe.apiKey = "sk_test_xxxxxxxxxxxxxxxxxxxxxxxx";)
+-   You have to put your public key in src/main/webapp/app/app.module.ts line 42 (NgxStripeModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),)
+
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:

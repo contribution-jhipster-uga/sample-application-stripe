@@ -8,13 +8,13 @@
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
-                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message"
-                    [translateValues]="{username: account.login}"> You are logged in as user "{{account.login}}". </span>
+                <span id="home-logged-message" *ngIf="account" jhiTranslate="home.logged.message" [translateValues]="{username: account.login}"> You are logged in as user "{{account.login}}". </span>
             </div>
 
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
-                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a><span jhiTranslate="global.messages.info.authenticated.suffix">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign in</a><span jhiTranslate="global.messages.info.authenticated.suffix">, you can try the default accounts:<br />- Administrator
+                    (login="admin" and password="admin") <br />- User (login="user" and password="user").</span>
             </div>
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
@@ -37,5 +37,39 @@
         <p>
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
         </p>
+
+        <p>
+            If you like our Stripe generator, don't forget to give us a star on <a href="https://github.com/contribution-jhipster-uga/generator-jhipster-stripe-payment" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
+        </p>
+
+        <div class="alert alert-warning">
+            If you want to try the Stripe payment, please do not forget to add your private and publish Stripe key.<br>
+            <ul>
+                <li>You have to put your private key in src/main/java/com/mycompany/myapp/web/rest/PaymentRessource.java line 85 (Stripe.apiKey = "sk_test_xxxxxxxxxxxxxxxxxxxxxxxx";)</li>
+                <li>You have to put your public key in src/main/webapp/app/app.module.ts line 42 (NgxStripeModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),)</li>
+            </ul>
+        </div>
+
+        <p>
+            This is an example of Stripe payment using Angular Material cards.
+        </p>
+
+        <mat-card class="example-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Dog harness</mat-card-title>
+                <mat-card-subtitle>$ 9.99</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+            <mat-card-content>
+                <p>
+                    This red dog harness will accompany you on all your walks.
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-button [routerLink]=" ['./payments'] ">BUY</button>
+            </mat-card-actions>
+        </mat-card>
+
     </div>
 </div>

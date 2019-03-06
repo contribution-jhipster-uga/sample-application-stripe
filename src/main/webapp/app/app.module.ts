@@ -17,13 +17,18 @@ import { StripeAppRoutingModule } from './app-routing.module';
 import { StripeHomeModule } from './home/home.module';
 import { StripeAccountModule } from './account/account.module';
 import { StripeEntityModule } from './entities/entity.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as moment from 'moment';
+import { NgxStripeModule } from 'ngx-stripe';
+import { StripePaymentsModule } from './payments/payments.module';
+import 'hammerjs';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ActiveMenuDirective, ErrorComponent } from './layouts';
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
@@ -36,6 +41,8 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
         StripeCoreModule,
         StripeHomeModule,
         StripeAccountModule,
+        StripePaymentsModule,
+        NgxStripeModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),
         // jhipster-needle-angular-add-module JHipster will add new module here
         StripeEntityModule,
         StripeAppRoutingModule

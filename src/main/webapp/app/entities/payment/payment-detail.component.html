@@ -1,0 +1,55 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="payment">
+            <h2><span jhiTranslate="stripeApp.payment.detail.title">Payment</span> {{payment.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="stripeApp.payment.date">Date</span></dt>
+                <dd>
+                    <span>{{payment.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.token">Token</span></dt>
+                <dd>
+                    <span>{{payment.token}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.currency">Currency</span></dt>
+                <dd>
+                    <span>{{payment.currency}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.amount">Amount</span></dt>
+                <dd>
+                    <span>{{payment.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.description">Description</span></dt>
+                <dd>
+                    <span>{{payment.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.capture">Capture</span></dt>
+                <dd>
+                    <span>{{payment.capture}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.receipt">Receipt</span></dt>
+                <dd>
+                    <span>{{payment.receipt}}</span>
+                </dd>
+                <dt><span jhiTranslate="stripeApp.payment.user">User</span></dt>
+                <dd>
+                    {{payment.user?.id}}
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/payment', payment.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

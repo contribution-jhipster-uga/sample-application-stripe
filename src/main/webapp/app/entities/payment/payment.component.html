@@ -1,0 +1,70 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="stripeApp.payment.home.title">Payments</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-payment" [routerLink]="['/payment/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="stripeApp.payment.home.createLabel">
+            Create new Payment
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="payments">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="stripeApp.payment.date">Date</span></th>
+            <th><span jhiTranslate="stripeApp.payment.token">Token</span></th>
+            <th><span jhiTranslate="stripeApp.payment.currency">Currency</span></th>
+            <th><span jhiTranslate="stripeApp.payment.amount">Amount</span></th>
+            <th><span jhiTranslate="stripeApp.payment.description">Description</span></th>
+            <th><span jhiTranslate="stripeApp.payment.capture">Capture</span></th>
+            <th><span jhiTranslate="stripeApp.payment.receipt">Receipt</span></th>
+            <th><span jhiTranslate="stripeApp.payment.user">User</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let payment of payments ;trackBy: trackId">
+                <td><a [routerLink]="['/payment', payment.id, 'view' ]">{{payment.id}}</a></td>
+                <td>{{payment.date | date:'medium'}}</td>
+                <td>{{payment.token}}</td>
+                <td>{{payment.currency}}</td>
+                <td>{{payment.amount}}</td>
+                <td>{{payment.description}}</td>
+                <td>{{payment.capture}}</td>
+                <td>{{payment.receipt}}</td>
+                <td>
+                    {{payment.user?.id}}
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/payment', payment.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/payment', payment.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'payment', { outlets: { popup: payment.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
