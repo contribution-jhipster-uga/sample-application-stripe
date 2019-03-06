@@ -7,6 +7,16 @@ This application also used two generators :
 -   [Stripe Payment](https://github.com/contribution-jhipster-uga/generator-jhipster-stripe-payment)
 -   [Angular Material Integration](https://github.com/contribution-jhipster-uga/sample-application-angular-material)
 
+## Overview
+
+You can buy a product shown in the home page :
+
+![Payment Page](images/HomePage.png)
+
+Using your own credit card in the payment page :
+
+![Payment Page](images/PaymentPage.png)
+
 ## Prerequisites
 
 If you want to try the Stripe payment, please do not forget to add your private and publish Stripe key (test or live version).
