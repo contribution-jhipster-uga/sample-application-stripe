@@ -12,7 +12,7 @@ This application also used two generators :
 If you want to try the Stripe payment, please do not forget to add your private and publish Stripe key (test or live version).
 
 -   You have to put your private key in src/main/java/com/mycompany/myapp/web/rest/PaymentRessource.java line 85 (Stripe.apiKey = "sk_test_xxxxxxxxxxxxxxxxxxxxxxxx";)
--   You have to put your public key in src/main/webapp/app/app.module.ts line 42 (NgxStripeModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),)
+-   You have to put your public key in src/main/webapp/app/app.module.ts line 45 (NgxStripeModule.forRoot('pk_test_xxxxxxxxxxxxxxxxxxxxxxxx'),)
 
 ## Development
 
